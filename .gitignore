@@ -8,8 +8,6 @@
 node_modules/
 npm-debug.log
 yarn-error.log
-.watchmanconfig
-  
 
 # Xcode
 #
@@ -30,7 +28,6 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
-ios/Pods
 
 # Android/IntelliJ
 #
@@ -39,9 +36,6 @@ build/
 .gradle
 local.properties
 *.iml
-android/gradle/
-android/gradlew
-android/gradlew.bat
 
 # BUCK
 buck-out/

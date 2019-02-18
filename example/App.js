@@ -10,6 +10,15 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
+import Matomo from 'react-native-matomo-sdk';
+
+Matomo.initialize('http://example.com', 1)
+  .catch(error => console.warn('Failed to initialize matomo', error))
+  .then(
+    () => Matomo.trackEvent('Application', 'Startup')
+    .catch(error => console.warn('Failed to track event', error))
+  );
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -19,6 +28,11 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  componentDidMount() {
+    Matomo.trackView(['start'])
+      .catch(error => console.warn('Failed to track screen', error));
+  }
+
   render() {
     return (
       <View style={styles.container}>
