@@ -1,0 +1,5 @@
+rootProject.name = 'example'
+include ':react-native-matomo-sdk'
+project(':react-native-matomo-sdk').projectDir = new File(rootProject.projectDir, '../../android')
+
+include ':app'
