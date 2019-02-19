@@ -1,8 +1,9 @@
 {
   "name": "react-native-matomo-sdk",
   "version": "1.0.0",
-  "description": "",
+  "description": "React Native wrapper for iOS and Android Matomo SDKs",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,6 +1,20 @@
-
 import { NativeModules } from 'react-native';
-
 const { RNMatomoSdk } = NativeModules;
 
-export default RNMatomoSdk;
+export function initialize(apiUrl, siteId) {
+  return RNMatomoSdk.initialize(apiUrl, siteId);
+}
+
+export function trackView(route) {
+  return RNMatomoSdk.trackView(route);
+}
+
+export function trackEvent(category, event, name, value) {
+  return RNMatomoSdk.trackEvent(category, event, {name: name, value: value});
+}
+
+export default {
+  initialize: initialize,
+  trackView: trackView,
+  trackEvent: trackEvent,
+};

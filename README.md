@@ -5,6 +5,22 @@
 
 `$ npm install react-native-matomo-sdk --save`
 
+### iOS dependencies setup
+
+This package depends on the official [Matomo iOS SDK](https://github.com/matomo-org/matomo-sdk-ios), which you will need to add as a CocoaPods dependency. In order to do this you need to add the line
+
+```
+pod 'MatomoTracker', '~> 6'
+```
+
+to your `Podfile`. If you don't have one, follow the instructions at [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html).
+
+
+#### Swift support
+
+Since the library is written is Swift, you need to have Swift enabled in your iOS project. If you already have any `.swift` files, you are good to go. Otherwise create a new empty Swift source file in Xcode, and allow it to create the neccessary bridging header when prompted.
+
+
 ### Mostly automatic installation
 
 `$ react-native link react-native-matomo-sdk`
