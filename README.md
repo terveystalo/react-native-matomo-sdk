@@ -1,6 +1,8 @@
 
 # react-native-matomo-sdk
 
+[![Build Status](https://travis-ci.org/terveystalo/react-native-matomo-sdk.svg?branch=master)](https://travis-ci.org/terveystalo/react-native-matomo-sdk)
+
 ## Getting started
 
 `$ npm install react-native-matomo-sdk --save`
