@@ -12,7 +12,16 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 
 import Matomo from 'react-native-matomo-sdk';
 
-Matomo.initialize('http://example.com', 1)
+// Use values from respective platform examples
+const matomoConfig = Platform.OS === 'ios' ? {
+  baseUrl: 'https://demo2.matomo.org/piwik.php',
+  siteId: 23,
+} : {
+  baseUrl: 'http://domain.tld/matomo.php',
+  siteId: 1,
+}
+
+Matomo.initialize(matomoConfig.baseUrl, matomoConfig.siteId)
   .catch(error => console.warn('Failed to initialize matomo', error))
   .then(
     () => Matomo.trackEvent('Application', 'Startup')
