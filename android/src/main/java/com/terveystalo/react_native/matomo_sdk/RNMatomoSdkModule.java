@@ -1,6 +1,8 @@
 
 package com.terveystalo.react_native.matomo_sdk;
 
+import android.text.TextUtils;
+
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -59,7 +61,7 @@ public class RNMatomoSdkModule extends ReactContextBaseJavaModule {
       for (int i = 0 ; i < route.size() ; i++) {
         routeList.add(route.getString(i));
       }
-      String path = String.join("/", routeList);
+      String path = TextUtils.join("/", routeList);
       TrackHelper.track().screen(path).title(path).with(tracker);
       promise.resolve(null);
     } catch(Exception e) {
