@@ -1,5 +1,4 @@
 import Foundation
-import MatomoTracker
 
 @objc(RNMatomoSdk)
 class RNMatomoSdk: NSObject {

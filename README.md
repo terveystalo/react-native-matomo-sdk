@@ -20,30 +20,7 @@ compileOptions {
 
 ### iOS
 
-Usage on iOS requires some manual steps.
-
-#### Swift support
-
 Since the official [`matomo-sdk-ios`](https://github.com/matomo-org/matomo-sdk-ios) library is written is Swift, you need to have Swift enabled in your iOS project. If you already have any `.swift` files, you are good to go. Otherwise create a new empty Swift source file in Xcode, and allow it to create the neccessary bridging header when prompted.
-
-#### Dependencies setup
-
-This package depends on the official [matomo-sdk-ios](https://github.com/matomo-org/matomo-sdk-ios), which you will need to add as a CocoaPods dependency. In order to do this you need to add the line
-
-```
-pod 'MatomoTracker', '~> 6'
-```
-
-to your `Podfile`. If you don't have one, follow the instructions at [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html).
-
-You will also need to enable frameworks, by uncommenting or adding the line
-
-```
-use_frameworks!
-```
-
-in your `Podfile`.
-
 
 ### Mostly automatic installation
 

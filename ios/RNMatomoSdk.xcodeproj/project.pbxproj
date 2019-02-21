@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		286CBB00221D88F800D941B5 /* MatomoTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBAFF221D88F800D941B5 /* MatomoTracker.swift */; };
+		286CBB14221D891C00D941B5 /* Locale+HttpAcceptLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB01221D891B00D941B5 /* Locale+HttpAcceptLanguage.swift */; };
+		286CBB15221D891C00D941B5 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB02221D891B00D941B5 /* Session.swift */; };
+		286CBB16221D891C00D941B5 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB04221D891B00D941B5 /* Dispatcher.swift */; };
+		286CBB17221D891C00D941B5 /* MemoryQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB05221D891B00D941B5 /* MemoryQueue.swift */; };
+		286CBB18221D891C00D941B5 /* URLSessionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB06221D891B00D941B5 /* URLSessionDispatcher.swift */; };
+		286CBB19221D891C00D941B5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB07221D891B00D941B5 /* Event.swift */; };
+		286CBB1A221D891C00D941B5 /* MainThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB08221D891B00D941B5 /* MainThread.swift */; };
+		286CBB1B221D891C00D941B5 /* CustomVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB09221D891B00D941B5 /* CustomVariable.swift */; };
+		286CBB1C221D891C00D941B5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB0B221D891C00D941B5 /* Logger.swift */; };
+		286CBB1D221D891C00D941B5 /* CustomDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB0C221D891C00D941B5 /* CustomDimension.swift */; };
+		286CBB1E221D891C00D941B5 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB0D221D891C00D941B5 /* Device.swift */; };
+		286CBB1F221D891C00D941B5 /* MatomoUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB0E221D891C00D941B5 /* MatomoUserDefaults.swift */; };
+		286CBB20221D891C00D941B5 /* EventAPISerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB0F221D891C00D941B5 /* EventAPISerializer.swift */; };
+		286CBB21221D891C00D941B5 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB10221D891C00D941B5 /* OrderItem.swift */; };
+		286CBB22221D891C00D941B5 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB11221D891C00D941B5 /* Application.swift */; };
+		286CBB23221D891C00D941B5 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB12221D891C00D941B5 /* Queue.swift */; };
+		286CBB24221D891C00D941B5 /* Visitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CBB13221D891C00D941B5 /* Visitor.swift */; };
 		28CA64242214260F005E4407 /* RNMatomoSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CA64232214260F005E4407 /* RNMatomoSdk.swift */; };
 		B3E7B58A1CC2AC0600A0062D /* RNMatomoSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNMatomoSdk.m */; };
 /* End PBXBuildFile section */
@@ -25,6 +43,26 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNMatomoSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNMatomoSdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		286CBAFF221D88F800D941B5 /* MatomoTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatomoTracker.swift; path = "matomo-sdk-ios/MatomoTracker/MatomoTracker.swift"; sourceTree = "<group>"; };
+		286CBB01221D891B00D941B5 /* Locale+HttpAcceptLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Locale+HttpAcceptLanguage.swift"; path = "matomo-sdk-ios/MatomoTracker/Locale+HttpAcceptLanguage.swift"; sourceTree = "<group>"; };
+		286CBB02221D891B00D941B5 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = "matomo-sdk-ios/MatomoTracker/Session.swift"; sourceTree = "<group>"; };
+		286CBB04221D891B00D941B5 /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dispatcher.swift; path = "matomo-sdk-ios/MatomoTracker/Dispatcher.swift"; sourceTree = "<group>"; };
+		286CBB05221D891B00D941B5 /* MemoryQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemoryQueue.swift; path = "matomo-sdk-ios/MatomoTracker/MemoryQueue.swift"; sourceTree = "<group>"; };
+		286CBB06221D891B00D941B5 /* URLSessionDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLSessionDispatcher.swift; path = "matomo-sdk-ios/MatomoTracker/URLSessionDispatcher.swift"; sourceTree = "<group>"; };
+		286CBB07221D891B00D941B5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = "matomo-sdk-ios/MatomoTracker/Event.swift"; sourceTree = "<group>"; };
+		286CBB08221D891B00D941B5 /* MainThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainThread.swift; path = "matomo-sdk-ios/MatomoTracker/MainThread.swift"; sourceTree = "<group>"; };
+		286CBB09221D891B00D941B5 /* CustomVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomVariable.swift; path = "matomo-sdk-ios/MatomoTracker/CustomVariable.swift"; sourceTree = "<group>"; };
+		286CBB0A221D891C00D941B5 /* MatomoTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatomoTracker.h; path = "matomo-sdk-ios/MatomoTracker/MatomoTracker.h"; sourceTree = "<group>"; };
+		286CBB0B221D891C00D941B5 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = "matomo-sdk-ios/MatomoTracker/Logger.swift"; sourceTree = "<group>"; };
+		286CBB0C221D891C00D941B5 /* CustomDimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomDimension.swift; path = "matomo-sdk-ios/MatomoTracker/CustomDimension.swift"; sourceTree = "<group>"; };
+		286CBB0D221D891C00D941B5 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = "matomo-sdk-ios/MatomoTracker/Device.swift"; sourceTree = "<group>"; };
+		286CBB0E221D891C00D941B5 /* MatomoUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatomoUserDefaults.swift; path = "matomo-sdk-ios/MatomoTracker/MatomoUserDefaults.swift"; sourceTree = "<group>"; };
+		286CBB0F221D891C00D941B5 /* EventAPISerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventAPISerializer.swift; path = "matomo-sdk-ios/MatomoTracker/EventAPISerializer.swift"; sourceTree = "<group>"; };
+		286CBB10221D891C00D941B5 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderItem.swift; path = "matomo-sdk-ios/MatomoTracker/OrderItem.swift"; sourceTree = "<group>"; };
+		286CBB11221D891C00D941B5 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Application.swift; path = "matomo-sdk-ios/MatomoTracker/Application.swift"; sourceTree = "<group>"; };
+		286CBB12221D891C00D941B5 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = "matomo-sdk-ios/MatomoTracker/Queue.swift"; sourceTree = "<group>"; };
+		286CBB13221D891C00D941B5 /* Visitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Visitor.swift; path = "matomo-sdk-ios/MatomoTracker/Visitor.swift"; sourceTree = "<group>"; };
+		286CBB25221D893500D941B5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "matomo-sdk-ios/MatomoTracker/Info.plist"; sourceTree = "<group>"; };
 		28CA64222214260F005E4407 /* RNMatomoSdk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNMatomoSdk-Bridging-Header.h"; sourceTree = "<group>"; };
 		28CA64232214260F005E4407 /* RNMatomoSdk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNMatomoSdk.swift; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNMatomoSdk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNMatomoSdk.m; sourceTree = "<group>"; };
@@ -49,6 +87,41 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		286CBAE0221D881F00D941B5 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				286CBAFE221D88E800D941B5 /* MatomoTracker */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		286CBAFE221D88E800D941B5 /* MatomoTracker */ = {
+			isa = PBXGroup;
+			children = (
+				286CBB25221D893500D941B5 /* Info.plist */,
+				286CBB11221D891C00D941B5 /* Application.swift */,
+				286CBB0C221D891C00D941B5 /* CustomDimension.swift */,
+				286CBB09221D891B00D941B5 /* CustomVariable.swift */,
+				286CBB0D221D891C00D941B5 /* Device.swift */,
+				286CBB04221D891B00D941B5 /* Dispatcher.swift */,
+				286CBB07221D891B00D941B5 /* Event.swift */,
+				286CBB0F221D891C00D941B5 /* EventAPISerializer.swift */,
+				286CBB01221D891B00D941B5 /* Locale+HttpAcceptLanguage.swift */,
+				286CBB0B221D891C00D941B5 /* Logger.swift */,
+				286CBB08221D891B00D941B5 /* MainThread.swift */,
+				286CBB0A221D891C00D941B5 /* MatomoTracker.h */,
+				286CBB0E221D891C00D941B5 /* MatomoUserDefaults.swift */,
+				286CBB05221D891B00D941B5 /* MemoryQueue.swift */,
+				286CBB10221D891C00D941B5 /* OrderItem.swift */,
+				286CBB12221D891C00D941B5 /* Queue.swift */,
+				286CBB02221D891B00D941B5 /* Session.swift */,
+				286CBB06221D891B00D941B5 /* URLSessionDispatcher.swift */,
+				286CBB13221D891C00D941B5 /* Visitor.swift */,
+				286CBAFF221D88F800D941B5 /* MatomoTracker.swift */,
+			);
+			name = MatomoTracker;
+			sourceTree = "<group>";
+		};
 		28CA645D22144F38005E4407 /* RNMatomoSdk */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +135,7 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				286CBAE0221D881F00D941B5 /* Libraries */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				28CA645D22144F38005E4407 /* RNMatomoSdk */,
 			);
@@ -124,6 +198,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				286CBB22221D891C00D941B5 /* Application.swift in Sources */,
+				286CBB1A221D891C00D941B5 /* MainThread.swift in Sources */,
+				286CBB1B221D891C00D941B5 /* CustomVariable.swift in Sources */,
+				286CBB23221D891C00D941B5 /* Queue.swift in Sources */,
+				286CBB17221D891C00D941B5 /* MemoryQueue.swift in Sources */,
+				286CBB19221D891C00D941B5 /* Event.swift in Sources */,
+				286CBB15221D891C00D941B5 /* Session.swift in Sources */,
+				286CBB1F221D891C00D941B5 /* MatomoUserDefaults.swift in Sources */,
+				286CBB24221D891C00D941B5 /* Visitor.swift in Sources */,
+				286CBB1E221D891C00D941B5 /* Device.swift in Sources */,
+				286CBB00221D88F800D941B5 /* MatomoTracker.swift in Sources */,
+				286CBB18221D891C00D941B5 /* URLSessionDispatcher.swift in Sources */,
+				286CBB20221D891C00D941B5 /* EventAPISerializer.swift in Sources */,
+				286CBB1C221D891C00D941B5 /* Logger.swift in Sources */,
+				286CBB16221D891C00D941B5 /* Dispatcher.swift in Sources */,
+				286CBB14221D891C00D941B5 /* Locale+HttpAcceptLanguage.swift in Sources */,
+				286CBB1D221D891C00D941B5 /* CustomDimension.swift in Sources */,
+				286CBB21221D891C00D941B5 /* OrderItem.swift in Sources */,
 				B3E7B58A1CC2AC0600A0062D /* RNMatomoSdk.m in Sources */,
 				28CA64242214260F005E4407 /* RNMatomoSdk.swift in Sources */,
 			);
