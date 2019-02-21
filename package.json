@@ -1,6 +1,6 @@
 {
   "name": "react-native-matomo-sdk",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "React Native wrapper for iOS and Android Matomo SDKs",
   "main": "index.js",
   "types": "index.d.ts",
@@ -11,7 +11,8 @@
     "test:ios": "cd example/ && npm ci && npm run test:ios"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "matomo"
   ],
   "author": "Axel Eirola <axel.eirola@terveystalo.com>",
   "license": "MIT",

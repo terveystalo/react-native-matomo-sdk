@@ -28,7 +28,11 @@ jobs:
         - npm run test:ios
 
     - stage: Deploy
-      name: NPM Package
-      script:
-          - npm test
-          - npm pack --dry-run
+      name: npm publish
+      if: tag IS present
+      deploy:
+        on:
+          tags: true
+        provider: npm
+        email: $NPM_EMAIL
+        api_key: $NPM_API_KEY

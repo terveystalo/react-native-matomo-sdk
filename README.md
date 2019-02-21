@@ -87,3 +87,14 @@ pod install --project-directory=ios/
 # Open project in xcode
 open ios/example.xcworkspace/
 ```
+
+### Releasing
+
+```bash
+# Switch to master branch
+git checkout master
+# Set new version
+npm version [major | minor | patch]
+# Push tag
+git push --follow-tags
+```
