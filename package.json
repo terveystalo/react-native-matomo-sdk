@@ -5,8 +5,10 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "test": "npm run test:example",
-    "test:example": "cd example && npm test"
+    "test": "npm run test:js",
+    "test:js": "cd example/ && npm ci && npm run test:js",
+    "test:android": "cd example/ && npm ci && npm run test:android",
+    "test:ios": "cd example/ && npm ci && npm run test:ios"
   },
   "keywords": [
     "react-native"

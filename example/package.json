@@ -5,10 +5,9 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "postinstall": "install-local",
-    "test": "npm run test:prepare && npm run test:js && npm run test:android && npm run test:ios",
-    "test:prepare": "npm ci",
+    "test": "npm run test:js && npm run test:android && npm run test:ios",
     "test:js": "jest",
-    "test:android": "echo 'No Android tests yet'",
+    "test:android": "cd android/ && ./gradlew app:build",
     "test:ios": "cd ios/ && xcodebuild -project example.xcodeproj -configuration Debug -scheme example -quiet CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO"
   },
   "dependencies": {
