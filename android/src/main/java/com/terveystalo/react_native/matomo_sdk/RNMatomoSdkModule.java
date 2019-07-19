@@ -43,9 +43,6 @@ public class RNMatomoSdkModule extends ReactContextBaseJavaModule {
         tracker = TrackerBuilder
                 .createDefault(apiUrl, siteId)
                 .build(Matomo.getInstance(this.reactContext));
-
-        // Disable default automatic user ID generation for consistency with iOS
-        tracker.setUserId(null);
       }
       promise.resolve(null);
     } catch(Exception e) {

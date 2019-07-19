@@ -47,6 +47,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.facebook.react:react-native:+'
-    implementation 'org.matomo.sdk:tracker:4.+'
+    api 'com.facebook.react:react-native:+'
+    implementation 'org.matomo.sdk:tracker:4.1.+'
 }
