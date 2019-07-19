@@ -23,6 +23,7 @@ jobs:
       os: osx
       osx_image: xcode10.2
       script:
+        - pod lib lint --quick
         - npm run test:js
         - npm run test:ios
 
