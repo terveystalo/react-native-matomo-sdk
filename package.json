@@ -21,6 +21,6 @@
     "url": "https://github.com/terveystalo/react-native-matomo-sdk.git"
   },
   "peerDependencies": {
-    "react-native": ">=0.41.2"
+    "react-native": ">=0.60.0"
   }
 }

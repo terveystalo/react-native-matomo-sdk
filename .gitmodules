@@ -1,3 +1,0 @@
-[submodule "ios/matomo-sdk-ios"]
-	path = ios/matomo-sdk-ios
-	url = https://github.com/matomo-org/matomo-sdk-ios.git

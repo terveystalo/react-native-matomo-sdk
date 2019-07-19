@@ -4,70 +4,141 @@
  *
  * @format
  * @flow
- * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { Fragment } from "react";
+import {
+  Platform,
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  StatusBar
+} from "react-native";
 
-import Matomo from 'react-native-matomo-sdk';
+import {
+  Header,
+  LearnMoreLinks,
+  Colors,
+  DebugInstructions,
+  ReloadInstructions
+} from "react-native/Libraries/NewAppScreen";
+
+import Matomo from "react-native-matomo-sdk";
 
 // Use values from respective platform examples
-const matomoConfig = Platform.OS === 'ios' ? {
-  baseUrl: 'https://demo2.matomo.org/piwik.php',
-  siteId: 23,
-} : {
-  baseUrl: 'http://domain.tld/matomo.php',
-  siteId: 1,
-}
+const matomoConfig =
+  Platform.OS === "ios"
+    ? {
+        baseUrl: "https://demo2.matomo.org/piwik.php",
+        siteId: 23
+      }
+    : {
+        baseUrl: "http://domain.tld/matomo.php",
+        siteId: 1
+      };
 
 Matomo.initialize(matomoConfig.baseUrl, matomoConfig.siteId)
-  .catch(error => console.warn('Failed to initialize matomo', error))
-  .then(
-    () => Matomo.trackEvent('Application', 'Startup')
-    .catch(error => console.warn('Failed to track event', error))
+  .catch(error => console.warn("Failed to initialize matomo", error))
+  .then(() =>
+    Matomo.trackEvent("Application", "Startup").catch(error =>
+      console.warn("Failed to track event", error)
+    )
   );
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-type Props = {};
-export default class App extends Component<Props> {
-  componentDidMount() {
-    Matomo.trackView(['start'])
-      .catch(error => console.warn('Failed to track screen', error));
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+const App = () => {
+  React.useEffect(() => {
+    Matomo.trackView(["start"]).catch(error =>
+      console.warn("Failed to track screen", error)
     );
-  }
-}
+  }, []);
+
+  return (
+    <Fragment>
+      <StatusBar barStyle="dark-content" />
+      <SafeAreaView>
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={styles.scrollView}
+        >
+          <Header />
+          {global.HermesInternal == null ? null : (
+            <View style={styles.engine}>
+              <Text style={styles.footer}>Engine: Hermes</Text>
+            </View>
+          )}
+          <View style={styles.body}>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Step One</Text>
+              <Text style={styles.sectionDescription}>
+                Edit <Text style={styles.highlight}>App.js</Text> to change this
+                screen and then come back to see your edits.
+              </Text>
+            </View>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>See Your Changes</Text>
+              <Text style={styles.sectionDescription}>
+                <ReloadInstructions />
+              </Text>
+            </View>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Debug</Text>
+              <Text style={styles.sectionDescription}>
+                <DebugInstructions />
+              </Text>
+            </View>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Learn More</Text>
+              <Text style={styles.sectionDescription}>
+                Read the docs to discover what to do next:
+              </Text>
+            </View>
+            <LearnMoreLinks />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </Fragment>
+  );
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+  scrollView: {
+    backgroundColor: Colors.lighter
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  engine: {
+    position: "absolute",
+    right: 0
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  body: {
+    backgroundColor: Colors.white
   },
+  sectionContainer: {
+    marginTop: 32,
+    paddingHorizontal: 24
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: "600",
+    color: Colors.black
+  },
+  sectionDescription: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: "400",
+    color: Colors.dark
+  },
+  highlight: {
+    fontWeight: "700"
+  },
+  footer: {
+    color: Colors.dark,
+    fontSize: 12,
+    fontWeight: "600",
+    padding: 4,
+    paddingRight: 12,
+    textAlign: "right"
+  }
 });
+
+export default App;

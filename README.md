@@ -1,4 +1,3 @@
-
 # react-native-matomo-sdk
 
 [![Build Status](https://travis-ci.org/terveystalo/react-native-matomo-sdk.svg?branch=master)](https://travis-ci.org/terveystalo/react-native-matomo-sdk)
@@ -7,63 +6,33 @@
 
 `$ npm install react-native-matomo-sdk --save`
 
-### Android
-
-Since the official [`matomo-sdk-android`](https://github.com/matomo-org/matomo-sdk-android) library uses Java 1.8 features, you will need to add the following lines in your `android/app/build.gradle` file under the `android` section:
-
-```
-compileOptions {
-  sourceCompatibility JavaVersion.VERSION_1_8
-  targetCompatibility JavaVersion.VERSION_1_8
-}
-```
+Requires React Native version 0.60.0, or later.
 
 ### iOS
 
 Since the official [`matomo-sdk-ios`](https://github.com/matomo-org/matomo-sdk-ios) library is written is Swift, you need to have Swift enabled in your iOS project. If you already have any `.swift` files, you are good to go. Otherwise create a new empty Swift source file in Xcode, and allow it to create the neccessary bridging header when prompted.
 
-### Mostly automatic installation
-
-`$ react-native link react-native-matomo-sdk`
-
-### Manual installation
-
-
-#### iOS
-
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-matomo-sdk` and add `RNMatomoSdk.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNMatomoSdk.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
-
-#### Android
-
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.terveystalo.react_native.matomo_sdk.RNMatomoSdkPackage;` to the imports at the top of the file
-  - Add `new RNMatomoSdkPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-matomo-sdk'
-  	project(':react-native-matomo-sdk').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-matomo-sdk/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-matomo-sdk')
-  	```
-
-
 ## Usage
-```javascript
-import RNMatomoSdk from 'react-native-matomo-sdk';
 
-// TODO: What to do with the module?
-RNMatomoSdk;
+```javascript
+import Matomo from "react-native-matomo-sdk";
+
+Matomo.initialize("https://example.com/piwik.php", 1)
+  .catch(error => console.warn("Failed to initialize matomo", error))
+  .then(() =>
+    Matomo.trackEvent("Application", "Startup").catch(error =>
+      console.warn("Failed to track event", error)
+    );
+
+    Matomo.trackView(["start"]).catch(error =>
+      console.warn("Failed to track screen", error)
+    );
+);
 ```
-  
 
 ## Developing
 
-The simplest way to develop the library is through the examples app. First install the 
+The simplest way to develop the library is through the examples app. First install the
 
 ```bash
 cd example/
