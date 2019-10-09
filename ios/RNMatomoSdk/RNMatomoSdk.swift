@@ -16,12 +16,8 @@ class RNMatomoSdk: NSObject {
         resolver: RCTPromiseResolveBlock,
         rejecter: RCTPromiseRejectBlock
     ) -> Void {
-        do {
-            tracker = MatomoTracker(siteId: siteId.stringValue, baseURL: URL(string: apiUrl)!)
-            resolver(nil)
-        } catch let error {
-            rejecter("tracker_failure", "Tracker operation failed", error)
-        }
+        tracker = MatomoTracker(siteId: siteId.stringValue, baseURL: URL(string: apiUrl)!)
+        resolver(nil)
     }
 
     @objc(trackView:resolver:rejecter:)
@@ -30,15 +26,11 @@ class RNMatomoSdk: NSObject {
         resolver: RCTPromiseResolveBlock,
         rejecter: RCTPromiseRejectBlock
     ) -> Void {
-        do {
-            if let tracker = tracker {
-                tracker.track(view: route)
-                resolver(nil)
-            } else {
-                rejecter("not_initialized", "The tracker has not been initialized", NSError())
-            }
-        } catch let error {
-            rejecter("tracker_failure", "Tracker operation failed", error)
+        if let tracker = tracker {
+            tracker.track(view: route)
+            resolver(nil)
+        } else {
+            rejecter("not_initialized", "The tracker has not been initialized", NSError())
         }
     }
 
@@ -50,19 +42,16 @@ class RNMatomoSdk: NSObject {
         resolver: RCTPromiseResolveBlock,
         rejecter: RCTPromiseRejectBlock
     ) -> Void {
-        do {
-            if let tracker = tracker {
-                tracker.track(eventWithCategory: category,
-                              action: action,
-                              name: optionalParameters.value(forKey:"name") as? String,
-                              number: optionalParameters.value(forKey:"value") as? NSNumber
-                )
-                resolver(nil)
-            } else {
-                rejecter("not_initialize", "The tracker has not been initialized", NSError())
-            }
-        } catch let error {
-            rejecter("tracker_failure", "Tracker operation failed", error)
+        if let tracker = tracker {
+            tracker.track(eventWithCategory: category,
+                          action: action,
+                          name: optionalParameters.value(forKey:"name") as? String,
+                          number: optionalParameters.value(forKey:"value") as? NSNumber,
+                          url: nil
+            )
+            resolver(nil)
+        } else {
+            rejecter("not_initialize", "The tracker has not been initialized", NSError())
         }
     }
 }
