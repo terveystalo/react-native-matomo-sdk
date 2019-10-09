@@ -6,7 +6,8 @@
 
 `$ npm install react-native-matomo-sdk --save`
 
-Requires React Native version 0.60.0, or later.
+- Requires React Native version 0.60.0, or later.
+- Supports iOS 10.0, or later.
 
 ### iOS
 

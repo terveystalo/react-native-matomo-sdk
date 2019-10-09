@@ -35,8 +35,8 @@ const matomoConfig =
         siteId: 23,
       }
     : {
-        baseUrl: 'http://domain.tld/matomo.php',
-        siteId: 1,
+        baseUrl: 'https://demo.matomo.org/matomo.php',
+        siteId: 53,
       };
 
 Matomo.initialize(matomoConfig.baseUrl, matomoConfig.siteId)
