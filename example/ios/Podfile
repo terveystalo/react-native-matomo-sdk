@@ -1,4 +1,5 @@
-platform :ios, '9.0'
+platform :ios, '10.0'
+source 'https://github.com/CocoaPods/Specs.git'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 target 'example' do
