@@ -5,10 +5,10 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "test": "npm run test:js",
-    "test:js": "cd example/ && npm ci && npm run test:js",
-    "test:android": "cd example/ && npm ci && npm run test:android",
-    "test:ios": "cd example/ && npm ci && npm run test:ios"
+    "test": "npm run test:example",
+    "test:example": "cd example/ && npm ci && npm test",
+    "test:android": "cd android/ && ./gradlew assembleRelease",
+    "test:ios": "pod lib lint --sources=https://cdn.cocoapods.org/,https://github.com/react-native-helpers/Specs.git"
   },
   "keywords": [
     "react-native",

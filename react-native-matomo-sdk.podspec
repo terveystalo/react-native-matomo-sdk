@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/terveystalo/react-native-matomo-sdk.git", :tag => "v#{s.version}" }
   s.source_files  = "ios/**/*.{h,m,swift}"
 
-  s.dependency 'React'
+  s.dependency 'React', '~> 0.60'
   s.dependency 'MatomoTracker', '~> 7'
 end

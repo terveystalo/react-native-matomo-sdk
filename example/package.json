@@ -7,10 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "postinstall": "install-local",
-    "test": "npm run test:js && npm run test:android && npm run test:ios",
-    "test:js": "jest",
-    "test:android": "cd android/ && ./gradlew app:compileDebugSources",
-    "test:ios": "cd ios/ && pod install --repo-update && xcodebuild -workspace example.xcworkspace -configuration Debug -scheme example -quiet CODE_SIGNING_ALLOWED=NO",
+    "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
