@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Platform,
   SafeAreaView,
@@ -39,20 +39,36 @@ const matomoConfig =
         siteId: 53,
       };
 
-Matomo.initialize(matomoConfig.baseUrl, matomoConfig.siteId)
-  .catch(error => console.warn('Failed to initialize matomo', error))
-  .then(() =>
-    Matomo.trackEvent('Application', 'Startup').catch(error =>
-      console.warn('Failed to track event', error),
-    ),
-  );
+const useInitializeMatomo = (config: typeof matomoConfig) => {
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  useEffect(() => {
+    Matomo.initialize(config.baseUrl, config.siteId)
+      .catch(error => console.warn('Failed to initialize matomo', error))
+      .then(() => setIsInitialized(true));
+  }, []);
+
+  return isInitialized;
+};
 
 const App: () => React$Node = () => {
+  const isMatomoInitialized = useInitializeMatomo(matomoConfig);
   React.useEffect(() => {
-    Matomo.trackView(['start']).catch(error =>
-      console.warn('Failed to track screen', error),
-    );
-  }, []);
+    if (!isMatomoInitialized) {
+      return;
+    }
+
+    const run = async () => {
+      await Matomo.trackEvent('Application', 'Startup').catch(error =>
+        console.warn('Failed to track event', error),
+      );
+
+      await Matomo.trackView(['start']).catch(error =>
+        console.warn('Failed to track screen', error),
+      );
+    };
+    run();
+  }, [isMatomoInitialized]);
 
   return (
     <>
