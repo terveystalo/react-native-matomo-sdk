@@ -51,7 +51,7 @@ class RNMatomoSdk: NSObject {
             )
             resolver(nil)
         } else {
-            rejecter("not_initialize", "The tracker has not been initialized", NSError())
+            rejecter("not_initialized", "The tracker has not been initialized", NSError())
         }
     }
 
@@ -67,5 +67,25 @@ class RNMatomoSdk: NSObject {
         } else {
             rejecter("not_initialize", "The tracker has not been initialized", NSError())
         }
+    }
+
+    @objc(setCustomDimension:value:resolver:rejecter:)
+    func setCustomDimension(
+        dimensionId: NSNumber,
+        value: String?,
+        resolver: RCTPromiseResolveBlock,
+        rejecter: RCTPromiseRejectBlock
+    ) -> Void {
+        guard let tracker = tracker else {
+            rejecter("not_initialized", "The tracker has not been initialized", NSError())
+            return
+        }
+        let id = dimensionId.intValue
+        if let value = value {
+            tracker.setDimension(value, forIndex: id)
+        } else {
+            tracker.remove(dimensionAtIndex: id)
+        }
+        resolver(nil)
     }
 }

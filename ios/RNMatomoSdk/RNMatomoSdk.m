@@ -23,5 +23,10 @@ RCT_EXTERN_METHOD(setUserId:(nonnull NSString *) userId
                   resolver:(RCTPromiseResolveBlock)resolver
                   rejecter:(RCTPromiseRejectBlock)rejecter
                   )
+RCT_EXTERN_METHOD(setCustomDimension:(nonnull NSNumber *)dimensionId
+                  value:(NSString *)value
+                  resolver:(RCTPromiseResolveBlock)resolver
+                  rejecter:(RCTPromiseRejectBlock)rejecter
+                  )
 
 @end

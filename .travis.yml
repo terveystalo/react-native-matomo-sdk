@@ -26,7 +26,7 @@ jobs:
       osx_image: xcode11
       script:
         - npm run test:example
-        - npm run test:ios
+        - travis_wait npm run test:ios
 
     - stage: Deploy
       name: npm publish
