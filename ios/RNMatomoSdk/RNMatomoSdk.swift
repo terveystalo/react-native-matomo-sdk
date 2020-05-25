@@ -54,4 +54,18 @@ class RNMatomoSdk: NSObject {
             rejecter("not_initialize", "The tracker has not been initialized", NSError())
         }
     }
+
+    @objc(setUserId:resolver:rejecter:)
+    func setUserId(
+        userId: String,
+        resolver: RCTPromiseResolveBlock,
+        rejecter: RCTPromiseRejectBlock
+    ) -> Void {
+        if let tracker = tracker {
+            tracker.userId = userId
+            resolver(nil)
+        } else {
+            rejecter("not_initialize", "The tracker has not been initialized", NSError())
+        }
+    }
 }

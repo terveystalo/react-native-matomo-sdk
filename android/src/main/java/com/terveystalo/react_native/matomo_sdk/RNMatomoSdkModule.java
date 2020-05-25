@@ -84,4 +84,15 @@ public class RNMatomoSdkModule extends ReactContextBaseJavaModule {
       promise.reject(e);
     }
   }
+
+  @ReactMethod
+  @SuppressWarnings("unused")
+  public void setUserId(String userId, Promise promise) {
+    try {
+      tracker.setUserId(userId);
+      promise.resolve(null);
+    } catch(Exception e) {
+      promise.reject(e);
+    }
+  }
 }

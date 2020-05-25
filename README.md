@@ -28,6 +28,8 @@ Matomo.initialize("https://example.com/piwik.php", 1)
     Matomo.trackView(["start"]).catch(error =>
       console.warn("Failed to track screen", error)
     );
+    
+    Matomo.setUserId("UniqueUserId");
 );
 ```
 

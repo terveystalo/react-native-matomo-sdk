@@ -13,8 +13,14 @@ export function trackEvent(category, event, name, value) {
   return RNMatomoSdk.trackEvent(category, event, {name: name, value: value});
 }
 
+export function setUserId(userId) {
+  return RNMatomoSdk.setUserId(userId);
+}
+
+
 export default {
   initialize: initialize,
   trackView: trackView,
   trackEvent: trackEvent,
+  setUserId: setUserId,
 };
