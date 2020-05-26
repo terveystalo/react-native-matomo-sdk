@@ -20,7 +20,9 @@ import Matomo from "react-native-matomo-sdk";
 
 Matomo.initialize("https://example.com/piwik.php", 1)
   .catch(error => console.warn("Failed to initialize matomo", error))
-  .then(() =>
+  .then(() => Matomo.setUserId("UniqueUserId"))
+  .then(() => Matomo.setCustomDimension(1, "1.0.0"))
+  .then(() => {
     Matomo.trackEvent("Application", "Startup").catch(error =>
       console.warn("Failed to track event", error)
     );
@@ -28,10 +30,30 @@ Matomo.initialize("https://example.com/piwik.php", 1)
     Matomo.trackView(["start"]).catch(error =>
       console.warn("Failed to track screen", error)
     );
-    
-    Matomo.setUserId("UniqueUserId");
+  }
 );
 ```
+
+### `initialize(trackerUrl: string, siteId: number)`
+
+Initializes the Matomo tracker. This should be called once on application start, after which the other API functions will work. Calling any other functions before the `initialize` call has resolved will likely result in an error.
+
+### `trackEvent(category: srting, action: string, name?: string , value?: number)`
+
+Tracks an [event](https://matomo.org/docs/event-tracking/) using the previously initialized tracker.
+
+### `trackView(path: string[])`
+
+Tracks a screen view using the previously initialized tracker. The path parts will be joined to a path string, with parts separated by `/` characters.
+
+### `setUserId(userId: string | null)`
+
+Sets the [user id](https://matomo.org/docs/user-id/) for the tracker. Passing `null` as the user id will clear any previously set user id.
+
+### `setCustomDimension(id: number, value: string | null)`
+
+Sets a [custom dimension](https://matomo.org/docs/custom-dimensions/) value for the tracker which will be sent as part of all subsequent tracking calls. Passing `null` as the value will clear any previously set value for the given dimension id.
+
 
 ## Developing
 

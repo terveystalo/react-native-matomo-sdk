@@ -9,7 +9,7 @@ declare module "react-native-matomo-sdk" {
       value?: number
     ): Promise<void>;
 
-    export function setUserId(userId: string): Promise<void>;
+    export function setUserId(userId: string | null): Promise<void>;
 
     export function setCustomDimension(
       id: number,

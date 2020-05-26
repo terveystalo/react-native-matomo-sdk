@@ -63,16 +63,25 @@ const App: () => React$Node = () => {
         console.warn('Failed to track event', error),
       );
 
+      await Matomo.setUserId('UniqueUserId').catch(error =>
+        console.warn('Error setting user id', error),
+      );
+
       await Matomo.setCustomDimension(1, '1.0.0').catch(error =>
-        console.warn('Error clearing custom dimension', error),
+        console.warn('Error setting custom dimension', error),
       );
 
       await Matomo.setCustomDimension(2, 'en-US').catch(error =>
-        console.warn('Error clearing custom dimension', error),
+        console.warn('Error setting custom dimension', error),
       );
 
       await Matomo.trackView(['start']).catch(error =>
         console.warn('Failed to track screen', error),
+      );
+
+      // Clear a user id by setting it to null
+      await Matomo.setUserId(null).catch(error =>
+        console.warn('Error clearing user id', error),
       );
 
       // Clear a custom dimension by setting it to null
