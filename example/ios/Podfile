@@ -1,5 +1,4 @@
 platform :ios, '10.0'
-source 'https://github.com/CocoaPods/Specs.git'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 def add_flipper_pods!(versions = {})
