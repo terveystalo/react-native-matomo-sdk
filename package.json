@@ -1,6 +1,6 @@
 {
   "name": "react-native-matomo-sdk",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "React Native wrapper for iOS and Android Matomo SDKs",
   "main": "index.js",
   "types": "index.d.ts",
