@@ -1,3 +1,7 @@
+:warning: **Deprecated:** As our team is not using Matomo anymore, we won't have the resources to maintain this library in the future. Fortunately there is another library for react native at https://github.com/BonifyByForteil/react-native-matomo.
+
+-----
+
 # react-native-matomo-sdk
 
 [![Build Status](https://travis-ci.org/terveystalo/react-native-matomo-sdk.svg?branch=master)](https://travis-ci.org/terveystalo/react-native-matomo-sdk)
